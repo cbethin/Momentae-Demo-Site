@@ -1,5 +1,11 @@
 console.log("Connected.")
 
+function handleNewScores(data) {
+    if (!data) { return; }
+    if (!data.hasOwnProperty('scores')) { return; }
+
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
 
@@ -12,7 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
             type: "POST",
             url: 'https://dr.charlesbethin.com/api/getTopicScores',
             data: JSON.stringify({"text": textBox.value}),
-            contentType: 'application/json'
+            contentType: 'application/json',
+            success: (data, success, xhttp) => {
+                jsonData = $.parseJSON(data)
+                handleNewScores(jsonData)
+            }
         })
     });
 })
