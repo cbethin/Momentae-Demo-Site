@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
         $.ajax({
             type: "POST",
             url: 'https://dr.charlesbethin.com/api/getTopicScores',
-            data: {"text": textBox.value},
+            data: JSON.stringify({"text": textBox.value}),
             contentType: 'application/json'
         })
     });
