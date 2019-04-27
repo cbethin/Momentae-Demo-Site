@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="385px" height="92px" viewBox="0 0 385 92" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <g id="website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1029.000000, -23.000000)">
+            <g id="Group-2" transform="translate(1029.000000, 11.000000)">
+                <text id="mental-health-analyt" font-family="SFProText-Regular, SF Pro Text" font-size="23.2875" font-weight="normal" letter-spacing="-1.74656217" fill="#C8C8C8">
+                    <tspan x="100.9125" y="98.475">mental health analytics engine</tspan>
+                </text>
+                <g id="Group" transform="translate(95.737500, 0.000000)" fill="#C8C8C8" font-family="SFProText-Bold, SF Pro Text" font-size="75.0375" font-weight="bold" letter-spacing="-5.87362509">
+                    <text id="omentae">
+                        <tspan x="0" y="71.14375">omenta</tspan>
+                        <tspan x="248.237321" y="71.14375">e</tspan>
+                    </text>
+                </g>
+                <g id="Group-5" transform="translate(0.000000, 12.937500)" fill-rule="nonzero">
+                    <g id="O1" transform="translate(25.875000, 0.000000)">
+                        <rect id="Left" fill="#636363" x="0" y="56.5553571" width="12.9375" height="6.28392857"></rect>
+                        <rect id="Left-Copy" fill="#636363" x="51.75" y="56.5553571" width="12.9375" height="6.28392857"></rect>
+                        <path d="M0,62.8392857 C0,79.5964286 10.78125,87.975 32.34375,87.975 C53.90625,87.975 64.6875,79.5964286 64.6875,62.8392857 L51.75,62.8392857 C51.7495463,75.0488672 45.2807963,81.2552165 32.34375,81.4583333 C19.4067037,81.6614502 12.9379537,75.455101 12.9375,62.8392857 L0,62.8392857 Z" id="LowerO" fill="#636363"></path>
+                        <g id="Upper" fill="#C8C8C8">
+                            <rect id="Right" x="51.75" y="42.3583333" width="12.9375" height="16.2916667"></rect>
+                            <rect id="Left" x="-3.55271368e-15" y="42.3583333" width="12.9375" height="16.2916667"></rect>
+                            <path d="M1.10134124e-13,-3.57008069e-06 C2.79944956e-11,29.9410679 10.7440663,44.8982448 32.232199,44.8715274 C53.7203316,44.8448099 64.5387653,29.887633 64.6875,-3.57008069e-06 L51.75,-3.57008051e-06 C51.6012653,21.0696393 45.0953316,31.6044607 32.232199,31.6044607 C19.3690663,31.6044607 12.9375,21.0696393 12.9375,-3.57008066e-06 L1.10134124e-13,-3.57008069e-06 Z" id="Upper0" transform="translate(32.343750, 22.435780) rotate(-180.000000) translate(-32.343750, -22.435780) "></path>
+                        </g>
+                    </g>
+                    <g id="O1-Copy">
+                        <rect id="Left" fill="#636363" x="0" y="56.5553571" width="12.9375" height="6.28392857"></rect>
+                        <rect id="Left-Copy" fill="#636363" x="51.75" y="56.5553571" width="12.9375" height="6.28392857"></rect>
+                        <path d="M0,62.8392857 C0,79.5964286 10.78125,87.975 32.34375,87.975 C53.90625,87.975 64.6875,79.5964286 64.6875,62.8392857 L51.75,62.8392857 C51.7495463,75.0488672 45.2807963,81.2552165 32.34375,81.4583333 C19.4067037,81.6614502 12.9379537,75.455101 12.9375,62.8392857 L0,62.8392857 Z" id="LowerO" fill="#636363"></path>
+                        <g id="Upper" fill="#C8C8C8">
+                            <rect id="Right" x="51.75" y="42.3583333" width="12.9375" height="16.2916667"></rect>
+                            <rect id="Left" x="0" y="42.3583333" width="12.9375" height="16.2916667"></rect>
+                            <path d="M1.10134124e-13,-3.57008069e-06 C2.79944956e-11,29.9410679 10.7440663,44.8982448 32.232199,44.8715274 C53.7203316,44.8448099 64.5387653,29.887633 64.6875,-3.57008069e-06 L51.75,-3.57008051e-06 C51.6012653,21.0696393 45.0953316,31.6044607 32.232199,31.6044607 C19.3690663,31.6044607 12.9375,21.0696393 12.9375,-3.57008066e-06 L1.10134124e-13,-3.57008069e-06 Z" id="Upper0" transform="translate(32.343750, 22.435780) rotate(-180.000000) translate(-32.343750, -22.435780) "></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
