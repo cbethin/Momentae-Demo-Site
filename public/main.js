@@ -25,7 +25,7 @@ DeepRation.modifySymptoms = (scores) => {
             outputColors.push(DeepRation.colors[i])
         }
     }
-    return { data: outputData, labels: outputLabels, colors: outputColors }
+    return { scores: outputData, labels: outputLabels, colors: outputColors }
 }
 
 function handleNewScores(data) {
