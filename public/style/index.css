@@ -40,9 +40,12 @@ body {
     margin-left: auto;
     margin-right: 200px;
 }
+.symptom-show .chart-container {
+    max-width: 40vw !important;
+    max-height: 30vh !important;
+}
 .symptom-show #chart {
-    max-width: 25vw;
-    max-height: 30vh;
+    height: 30vh !important;
 }
 .symptom-show ul {
     list-style: none;
