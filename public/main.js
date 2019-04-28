@@ -28,7 +28,7 @@ DeepRation.symptoms = [
     ]
 DeepRation.realSymptoms = ["Analysis / Pensive Thought", "Interpersonal Depression / Isolation", "Anxiety", "Suicide",
         "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Optimism" ]
-    ]
+        
 DeepRation.colors = getColors(DeepRation.symptoms.length)
 
 DeepRation.modifySymptoms = (scores) => {
