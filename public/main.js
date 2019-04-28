@@ -1,4 +1,5 @@
 console.log("Connected.")
+var pieChart = null;
 
 var DeepRation = {}
 DeepRation.symptoms = [ 
@@ -61,7 +62,9 @@ function loadCharts(scores) {
 
     var ctx = document.getElementById('chart').getContext('2d');
     ctx.backgroundColor = '#1e1e1e';
-    var myChart = new Chart(ctx, {
+
+    if (pieChart) { pieChart.destroy(); }
+    pieChart = new Chart(ctx, {
         type: 'pie',
         data: {
             labels: data.labels,
