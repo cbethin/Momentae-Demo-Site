@@ -28,21 +28,29 @@ DeepRation.symptoms = [
     ]
 DeepRation.realSymptoms = ["Analysis / Pensive Thought", "Interpersonal Depression / Isolation", "Anxiety", "Suicide",
         "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Optimism" ]
-        
+
 DeepRation.colors = getColors(DeepRation.symptoms.length)
 
 DeepRation.modifySymptoms = (scores) => {
     var outputData = []
     var outputLabels = []
     var outputColors = []
+    var finalVal = 0.0
 
     for (i in scores) {
         if (DeepRation.realSymptoms.includes(DeepRation.symptoms[i])) {
-            outputData.push(scores[i])
-            outputLabels.push(DeepRation.symptoms[i])
-            outputColors.push(DeepRation.colors[i])
+            outputData.push(scores[i]);
+            outputLabels.push(DeepRation.symptoms[i]);
+            outputColors.push(DeepRation.colors[i]);
+        } else {
+            finalVal += scores[i];
         }
     }
+
+    outputData.push(finalVal);
+    outputLabels.push("Not Symptomatic");
+    outputColors.push("rgba(56,78,89,0.4)");
+
     return { scores: outputData, labels: outputLabels, colors: outputColors }
 }
 
@@ -88,7 +96,7 @@ function loadCharts(scores) {
             datasets: [{ 
                 data: data.scores,
                 // backgroundColor: ['#F24954', '#00D889', '#00A9F8', '#A872FF'],
-                backgroundColor: DeepRation.colors,
+                backgroundColor: data.colors,
                 borderWidth: 0
             }],
             
@@ -109,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
-    // loadCharts();
+    loadCharts();
 
     var submitButton = document.querySelector('.submit');
     var textBox = document.querySelector('textarea');
