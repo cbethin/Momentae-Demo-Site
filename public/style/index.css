@@ -43,9 +43,10 @@ body {
 .symptom-show .chart-container {
     max-width: 40vw !important;
     max-height: 30vh !important;
+    height: 30vh;
 }
 .symptom-show #chart {
-    height: 30vh !important;
+    position: relative;
 }
 .symptom-show ul {
     list-style: none;
