@@ -10,11 +10,28 @@ DeepRation.symptoms = [
         "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Anxiety", "Suicide" , "Entertainment", 
         "Clinical Mental Health / Intervention", "College", "Social Media / Internet Terms"
     ]
+DeepRation.realSymptoms = ["Analysis / Pensive Thought", "Interpersonal Depression / Isolation", "Anxiety", "Suicide"]
 DeepRation.colors = getColors(DeepRation.symptoms.length)
+
+DeepRation.modifySymptoms = (scores) => {
+    var outputData = []
+    var outputLabels = []
+    var outputColors = []
+
+    for (i in scores) {
+        if (DeepRation.realSymptoms.includes(DeepRation.symptoms[i])) {
+            outputData.push(scores[i])
+            outputLabels.push(DeepRation.symptoms[i])
+            outputColors.push(DeepRation.colors[i])
+        }
+    }
+    return { data: outputData, labels: outputLabels, colors: outputColors }
+}
 
 function handleNewScores(data) {
     if (!data) { return; }
     if (!data.hasOwnProperty('scores')) { return; }
+
     loadCharts(data['scores'])
 }
 
@@ -30,16 +47,26 @@ function getColors(n) {
 }
 
 function loadCharts(scores) {
-    if (!scores) { scores = [1, 1.5, 1, 1] }
+    if (!scores) { 
+        scores = [ 0.02976190476190475, 0.03174603174603174, 0.02976190476190475, 0.02976190476190475, 
+            0.02976190476190475, 0.051587301587301584, 0.02976190476190475, 0.037698412698412696, 0.02976190476190475, 
+            0.051587301587301584, 0.035714285714285705, 0.03174603174603174, 0.03174603174603174, 0.035714285714285705, 
+            0.04365079365079365, 0.02976190476190475, 0.02976190476190475, 0.02976190476190475, 0.03373015873015872, 
+            0.02976190476190475, 0.03174603174603174, 0.02976190476190475, 0.03373015873015872, 0.03174603174603174, 
+            0.02976190476190475, 0.02976190476190475, 0.02976190476190475, 0.037698412698412696, 0.03373015873015872, 
+            0.02976190476190475 ] 
+    }
+
+    var data = DeepRation.modifySymptoms(scores)
 
     var ctx = document.getElementById('chart').getContext('2d');
     ctx.backgroundColor = '#1e1e1e';
     var myChart = new Chart(ctx, {
         type: 'pie',
         data: {
-            labels: DeepRation.symptoms,
+            labels: data.labels,
             datasets: [{ 
-                data: scores,
+                data: data.scores,
                 // backgroundColor: ['#F24954', '#00D889', '#00A9F8', '#A872FF'],
                 backgroundColor: DeepRation.colors,
                 borderWidth: 0
