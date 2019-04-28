@@ -102,11 +102,18 @@ body {
 .scroller {
     position: absolute;
     bottom: 0;
-    margin-bottom: 20px;
+    margin: 0px 0px 20px 0px;
+
+    display: inline;
+}
+.scroller progress {
+    width: 100vw;
+    margin-left: -30px;
 }
 .scroller h6 {
     width: 100vw;
     margin: 0px 0px;
+    margin-left: auto;
 
     text-align: center;
     font-size: 2.5rem;

@@ -1,5 +1,20 @@
 console.log("Connected.")
 var pieChart = null;
+var progressBar = null;
+
+function startProgressBar() {
+    progressBar.value = 0;
+    var interval = setInterval(() => {
+        progressBar.value += 0.001;
+        console.log("Prog Bar --", progressBar.value)
+        if (progressBar.value == 1.0) {
+            clearInterval(interval);
+            setTimeout(() => {
+                progressBar.value = 0;
+            }, 500);
+        }
+    }, 10);
+}
 
 var DeepRation = {}
 DeepRation.symptoms = [ 
@@ -89,6 +104,9 @@ function loadCharts(scores) {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
 
+    progressBar = document.querySelector('progress');
+    progressBar.value = 0.0;
+
     loadCharts();
 
     var submitButton = document.querySelector('.submit');
@@ -105,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 jsonData = JSON.parse(JSON.stringify(data))
                 handleNewScores(jsonData)
             }
-        })
+        });
+        startProgressBar();
     });
 })
