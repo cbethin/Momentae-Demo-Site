@@ -122,6 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
             success: (data, success, xhttp) => {
                 jsonData = JSON.parse(JSON.stringify(data))
                 handleNewScores(jsonData)
+                progressBar.value = 1.0
             }
         });
         startProgressBar();
