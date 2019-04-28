@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
-    loadCharts();
+    // loadCharts();
 
     var submitButton = document.querySelector('.submit');
     var textBox = document.querySelector('textarea');
