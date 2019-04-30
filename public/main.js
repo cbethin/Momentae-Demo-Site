@@ -26,8 +26,10 @@ DeepRation.symptoms = [
         "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Anxiety", "Suicide" , "Entertainment", 
         "Clinical Mental Health / Intervention", "College", "Social Media / Internet Terms"
     ]
-DeepRation.realSymptoms = ["Analysis / Pensive Thought", "Interpersonal Depression / Isolation", "Anxiety", "Suicide",
-        "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Optimism" ]
+DeepRation.realSymptoms = ["Bodily Injury", "Existentialism", "Examining Relationships", "Negative Intimate Interactions",
+        "School Social Interactions", "Less than Positive Interactions", "Negative Emotions", 
+        "Clinical Mental Health / Intervention", "Physical Symptoms of Depression", "Suicide", "Swear Words", "Anxiety"
+    ]
 DeepRation.colors = getColors(DeepRation.symptoms.length)
 DeepRation.modifySymptoms = (scores) => {
     var outputData = []
