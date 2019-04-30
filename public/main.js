@@ -28,9 +28,7 @@ DeepRation.symptoms = [
     ]
 DeepRation.realSymptoms = ["Analysis / Pensive Thought", "Interpersonal Depression / Isolation", "Anxiety", "Suicide",
         "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Optimism" ]
-
 DeepRation.colors = getColors(DeepRation.symptoms.length)
-
 DeepRation.modifySymptoms = (scores) => {
     var outputData = []
     var outputLabels = []
@@ -42,10 +40,12 @@ DeepRation.modifySymptoms = (scores) => {
             outputData.push(scores[i]);
             outputLabels.push(DeepRation.symptoms[i]);
             outputColors.push(DeepRation.colors[i]);
-        } else {
-            finalVal += scores[i];
         }
     }
+
+    var sumOfVals = outputData.reduce((sum, x) => sum + x);
+    console.log("Sum of Vals:", sumOfVals);
+    var finalVal = 1 - sumOfVals
 
     outputData.push(finalVal);
     outputLabels.push("Not Symptomatic");
@@ -53,11 +53,24 @@ DeepRation.modifySymptoms = (scores) => {
 
     return { scores: outputData, labels: outputLabels, colors: outputColors }
 }
+DeepRation.getMaxSymptoms = (scores) => {
+    for (var i=0; i < scores.length; i++) {
+        
+    }
+
+}
 
 function handleNewScores(data) {
     if (!data) { return; }
     if (!data.hasOwnProperty('scores')) { return; }
 
+    let scores = data['scores'];
+    for (var i in scores) {
+        if (scores[i] < 0.03333333333333334) {
+            scores[i] = 0.0
+        }
+    }
+    
     loadCharts(data['scores'])
 }
 
