@@ -175,7 +175,8 @@ function beginAnimation() {
 
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
-
+    beginAnimation();
+    
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
