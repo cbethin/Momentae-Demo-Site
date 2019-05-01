@@ -6,7 +6,6 @@ function startProgressBar() {
     progressBar.value = 0;
     var interval = setInterval(() => {
         progressBar.value += 0.001;
-        console.log("Prog Bar --", progressBar.value)
         if (progressBar.value == 1.0) {
             clearInterval(interval);
             setTimeout(() => {
@@ -72,7 +71,8 @@ function handleNewScores(data) {
         }
     }
     
-    loadCharts(data['scores'])
+    setSymptomList(data['scores']);
+    loadCharts(data['scores']);
 }
 
 function getColors(n) {
@@ -86,6 +86,19 @@ function getColors(n) {
     return colors;
 }
 
+function setSymptomList(scores) {
+    var data = DeepRation.modifySymptoms(scores);
+    var symptomList = document.querySelector('#symptom-list');
+    var htmlString = "";
+
+    for (var i in data['scores']) {
+        if (data['scores'][i] > 0) {
+            htmlString += "<li id=\"" + data['labels'][i] + "\" style=\" color: " + data['colors'][i] + "\">" + data['labels'][i] + "</li>";
+        }
+    }
+
+    symptomList.innerHTML = htmlString;
+}
 function loadCharts(scores) {
     if (!scores) { 
         scores = [ 0.02976190476190475, 0.03174603174603174, 0.02976190476190475, 0.02976190476190475, 
