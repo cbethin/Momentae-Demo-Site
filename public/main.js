@@ -145,7 +145,7 @@ function loadCharts(scores) {
 
 // SLIDER
 function beginAnimation() {
-    var i = 1;
+    var i = 0;
     var facts = [
         '40% of all students with depression will not get treatment.', 
         '1 in 4 people aged 18-24 have a diagnosable mental illness.',
