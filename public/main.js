@@ -18,13 +18,12 @@ function startProgressBar() {
 
 var DeepRation = {}
 DeepRation.symptoms = [ 
-        "Restaurants", "Food / Cooking", "Home", "Casual Interaction", "Departing the home", 
-        "Bodily Injury", "Physicality", "Contemplation", "Family", "Communication", "Neutral / Details",  
-        "Financials / Transactions", "Optimism", "Time-related words", "Analysis / Pensive Thought", 
-        "Less Than Positive Interactions", "Work", "Interpersonal Depression / Isolation", "School -- more general" , 
-        "Romantic Descriptors and Interactions", "Friendship and Interactions", "Swear Words", 
-        "Negative Peer Social Interactions / Social Anxiety", "Negative Emotions", "Anxiety", "Suicide" , "Entertainment", 
-        "Clinical Mental Health / Intervention", "College", "Social Media / Internet Terms"
+        "Partying", "School Social Interactions", "Existenialism", "Work", "Home", "Restaurants", "Bodily Injury", "Swear Words",
+        "Negative Intimate Interactions", "Suicide", "Examining Relationships", "Anxiety", "Family", "Social Media / Internet Terms",
+        "Time (Descriptors", "Reflection", "Financials/Transactions", "Time (Duration)", "College", "Food/Cooking", "Neutral/Details",
+        "Clinica Mental Health / Intervention", "Less than Positive Interactions", "Romantic Descriptors & Interactions",
+        "Departing the Home", "Communication", "Casual Interaction", "Logical Discovery", "Negative Emotions", 
+        "Physical Symptoms of Depression"
     ]
 DeepRation.realSymptoms = ["Bodily Injury", "Existentialism", "Examining Relationships", "Negative Intimate Interactions",
         "School Social Interactions", "Less than Positive Interactions", "Negative Emotions", 
