@@ -145,7 +145,7 @@ function loadCharts(scores) {
 
 // SLIDER
 function beginAnimation() {
-    var i = 0;
+    var i = 1;
     var facts = [
         '40% of all students with depression will not get treatment.', 
         '1 in 4 people aged 18-24 have a diagnosable mental illness.',
@@ -154,6 +154,7 @@ function beginAnimation() {
 
     var scrollers = $('.scrolling-text h6');
     scrollers[0].innerText = facts[0];
+    scrollers[1].innerText = facts[1];
 
     return setInterval(() => {
         i++;
@@ -175,7 +176,7 @@ function beginAnimation() {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
     beginAnimation();
-
+    
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
