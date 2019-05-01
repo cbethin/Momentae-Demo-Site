@@ -85,7 +85,6 @@ function getColors(n) {
     }
     return colors;
 }
-
 function setSymptomList(scores) {
     if (!scores) {
         document.querySelector('#symptom-list').innerHTML = "<li>No Symptoms Found</li>"
@@ -142,6 +141,28 @@ function loadCharts(scores) {
             maintainAspectRatio: true
         }
     })
+}
+
+// SLIDER
+function animateLeftAndSwap() {
+    var i = 0;
+    setInterval(() => {
+        var slideAmount = i*100 + 'vw';
+        var animation;
+
+        if ((i / ($('.sliding-text h6').length - 1)) % 2 == 0) {
+            animation = { right: slideAmount };
+        } else {
+            animation = { left: slideAmount };
+        }
+
+        $('.sliding-text h6').animate(animation, {
+            duration: 5000,
+            ease: 'linear'
+        })
+
+        i++;
+    }, 5000);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
