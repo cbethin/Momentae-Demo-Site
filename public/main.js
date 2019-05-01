@@ -97,7 +97,7 @@ function setSymptomList(scores) {
     var htmlString = "";
 
     for (var i in data['scores']) {
-        if (data['scores'][i] > 0 && data['labels'][i] != "No Symptomatic") {
+        if (data['scores'][i] > 0 && data['labels'][i] != "Not Symptomatic") {
             htmlString += "<li id=\"" + data['labels'][i] + "\" style=\" color: " + data['colors'][i] + "\">" + data['labels'][i] + "</li>";
         }
     }
