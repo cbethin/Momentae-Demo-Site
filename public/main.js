@@ -144,19 +144,19 @@ function loadCharts(scores) {
 }
 
 // SLIDER
-function animateLeftAndSwap() {
+function beginAnimation() {
     var i = 0;
-    setInterval(() => {
-        var slideAmount = i*100 + 'vw';
+    return setInterval(() => {
+        var slideAmount = i*100;
         var animation;
 
-        if ((i / ($('.sliding-text h6').length - 1)) % 2 == 0) {
-            animation = { right: slideAmount };
-        } else {
-            animation = { left: slideAmount };
+        if ((i / ($('.scrolling-text h6').length - 1)) % 2 == 0) {
+            slideAmount *= -1;
         }
 
-        $('.sliding-text h6').animate(animation, {
+        $('.scrolling-text h6').animate({
+            right: slideAmount + 'vw'
+        }, {
             duration: 5000,
             ease: 'linear'
         })
