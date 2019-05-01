@@ -146,23 +146,31 @@ function loadCharts(scores) {
 // SLIDER
 function beginAnimation() {
     var i = 0;
-    return setInterval(() => {
-        var slideAmount = i*100;
-        var animation;
+    var facts = [
+        '40% of all students with depression will not get treatment.', 
+        '1 in 4 people aged 18-24 have a diagnosable mental illness.',
+        '30% have felt so depressed at one point they found it difficult to function.'
+    ]
 
-        if ((i / ($('.scrolling-text h6').length - 1)) % 2 == 0) {
-            slideAmount *= -1;
-        }
+    var scrollers = $('.scrolling-text h6');
+    scrollers[0].innerText = facts[0];
+    scrollers[1].innerText = facts[1];
+
+    return setInterval(() => {
+        i++;
+
+        $('.scrolling-text')[0].innerHTML += "<h6>" + facts[i % facts.length] + "</h6>"
+        $('.scrolling-text h6')[0].remove();
+        $('.scrolling-text h6').css('right', '0vw');
 
         $('.scrolling-text h6').animate({
-            right: slideAmount + 'vw'
+            right: '100vw'
         }, {
             duration: 5000,
-            ease: 'linear'
+            ease: 'linear',
         })
 
-        i++;
-    }, 5000);
+    }, 8500);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
