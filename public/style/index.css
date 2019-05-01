@@ -125,3 +125,7 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+.scrolling-text h6 {
+    position: relative;
+}
