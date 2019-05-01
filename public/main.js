@@ -92,11 +92,12 @@ function setSymptomList(scores) {
     var htmlString = "";
 
     for (var i in data['scores']) {
-        if (data['scores'][i] > 0) {
+        if (data['scores'][i] > 0 && data['labels'][i] != "No Symptomatic") {
             htmlString += "<li id=\"" + data['labels'][i] + "\" style=\" color: " + data['colors'][i] + "\">" + data['labels'][i] + "</li>";
         }
     }
 
+    if (htmlString == "") { htmlString = "<li>No Symptoms Found</li>"}
     symptomList.innerHTML = htmlString;
 }
 function loadCharts(scores) {
@@ -144,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
+    setSymptomList();
     loadCharts();
 
     var submitButton = document.querySelector('.submit');
