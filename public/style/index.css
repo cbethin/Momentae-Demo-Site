@@ -121,3 +121,7 @@ body {
     color: #C8C8C8;
     opacity: 0.75;
 }
+.scrolling-text {
+    display: flex;
+    flex-direction: row;
+}
