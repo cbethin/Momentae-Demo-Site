@@ -154,7 +154,6 @@ function beginAnimation() {
 
     var scrollers = $('.scrolling-text h6');
     scrollers[0].innerText = facts[0];
-    scrollers[1].innerText = facts[1];
 
     return setInterval(() => {
         i++;
@@ -176,7 +175,7 @@ function beginAnimation() {
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
     beginAnimation();
-    
+
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
 
