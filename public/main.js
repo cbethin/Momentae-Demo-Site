@@ -87,6 +87,11 @@ function getColors(n) {
 }
 
 function setSymptomList(scores) {
+    if (!scores) {
+        document.querySelector('#symptom-list').innerHTML = "<li>No Symptoms Found</li>"
+        return;
+    }
+
     var data = DeepRation.modifySymptoms(scores);
     var symptomList = document.querySelector('#symptom-list');
     var htmlString = "";
@@ -146,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     progressBar.value = 0.0;
 
     setSymptomList();
-    loadCharts();
+    loadCharts(new Array(30).fill(1));
 
     var submitButton = document.querySelector('.submit');
     var textBox = document.querySelector('textarea');
