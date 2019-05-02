@@ -18,7 +18,7 @@ function startProgressBar() {
 var DeepRation = {}
 DeepRation.symptoms = [ 
         "Partying", "School Social Interactions", "Existenialism", "Work", "Home", "Restaurants", "Bodily Injury", "Swear Words",
-        "Negative Intimate Interactions", "Suicide", "Examining Relationships", "Anxiety", "Family", "Social Media / Internet Terms",
+        "Negative Intimate Interactions", "Severe Depression", "Examining Relationships", "Anxiety", "Family", "Social Media / Internet Terms",
         "Time (Descriptors", "Reflection", "Financials/Transactions", "Time (Duration)", "College", "Food/Cooking", "Neutral/Details",
         "Clinica Mental Health / Intervention", "Less than Positive Interactions", "Romantic Descriptors & Interactions",
         "Departing the Home", "Communication", "Casual Interaction", "Logical Discovery", "Negative Emotions", 
@@ -26,7 +26,7 @@ DeepRation.symptoms = [
     ]
 DeepRation.realSymptoms = ["Bodily Injury", "Existentialism", "Examining Relationships", "Negative Intimate Interactions",
         "School Social Interactions", "Less than Positive Interactions", "Negative Emotions", 
-        "Clinical Mental Health / Intervention", "Physical Symptoms of Depression", "Suicide", "Swear Words", "Anxiety"
+        "Clinical Mental Health / Intervention", "Physical Symptoms of Depression", "Severe Depression", "Swear Words", "Anxiety"
     ]
 DeepRation.colors = getColors(DeepRation.symptoms.length)
 DeepRation.modifySymptoms = (scores) => {
@@ -151,25 +151,20 @@ function beginAnimation() {
         '1 in 4 people aged 18-24 have a diagnosable mental illness.',
         '30% have felt so depressed at one point they found it difficult to function.'
     ]
-
     var scrollers = $('.scrolling-text h6');
     scrollers[0].innerText = facts[0];
     scrollers[1].innerText = facts[1];
-
     return setInterval(() => {
         i++;
-
         $('.scrolling-text')[0].innerHTML += "<h6>" + facts[i % facts.length] + "</h6>"
         $('.scrolling-text h6')[0].remove();
         $('.scrolling-text h6').css('right', '0vw');
-
         $('.scrolling-text h6').animate({
             right: '100vw'
         }, {
             duration: 5000,
             ease: 'linear',
         })
-
     }, 8500);
 }
 
