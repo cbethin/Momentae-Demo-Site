@@ -201,4 +201,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         startProgressBar();
     });
+
+    textBox.addEventListener('keyup', () => {
+        $('.submit').click();
+    })
 })
