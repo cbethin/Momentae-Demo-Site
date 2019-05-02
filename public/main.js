@@ -197,7 +197,10 @@ document.addEventListener("DOMContentLoaded", () => {
         startProgressBar();
     });
 
-    textBox.addEventListener('keyup', () => {
-        $('.submit').click();
-    })
+    $('textarea').keyup((e) => {
+        var code = (e.keyCode ? e.keyCode : e.which);
+        if (code == 13) {
+            $('.submit').click();
+        }
+    });
 })
