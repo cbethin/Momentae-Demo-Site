@@ -7,6 +7,10 @@ body {
     overflow: hidden;
 }
 
+ul {
+    list-style: none;
+}
+
 .heading {
     display: flex;
     flex-direction: row;
@@ -47,9 +51,6 @@ body {
 }
 .symptom-show #chart {
     position: relative;
-}
-.symptom-show ul {
-    list-style: none;
 }
 .symptom-show li {
     font-weight: 600;
@@ -97,6 +98,19 @@ body {
     font-size: 1.75rem;
     font-weight: 100;
     color: #C8C8C8;
+}
+
+
+.samples {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 50px;
+}
+.sample-items {
+    text-decoration: underline;
+    cursor: pointer;
+    margin-right: 30px;
 }
 
 .scroller {

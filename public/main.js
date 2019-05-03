@@ -59,6 +59,12 @@ DeepRation.getMaxSymptoms = (scores) => {
     }
 
 }
+DeepRation.samples = [
+    "It's getting harder and harder each day to keep thinking of reasons to continue going on. I exercise regularly. I have enough friends that I love. I'm doing okay financially. I have hobbies to keep me distracted. But I can't get rid of this feeling of emptiness, loneliness that just doesn't want to let me go and just let me be a normal person. I don't want to keep trying to live this miserable life and I feel so fucking weak for believing as such",
+    "I am a college student, and have been feeling depressed for the past year and a half. I have tried therapy twice, and while it makes me feel a little bit better, I continue to sink back into a state of feeling sad and hopeless all of the time. I used to be motivated and have friends in high school, but since going to college I have had difficulty making friends, and feel somewhat hopeless about the future of my social life, and am overall experiencing a constant state of intense sadness. I am wondering if anyone who has taken anti-depressants has felt like they were able to get back to their \"old self\" prior to depression, and if taking meds has made them feel more comfortable in social situations. I have scheduled an upcoming appointment with a psychiatrist to discuss the possibility of taking medications.",
+    "So long story short I'm in my early 30's and can find no reason to do anything. Was engaged and me and my fiance had a couple  miscarriages. After multiple fights and our second miscarriage my fiance committed suicide. Since then (3 years) I struggle to find the point in anything.Has anyone else suffered the same way and if so how did you move on",
+    "The storm came in today. There was no rain outside. No wind, no thunder or lightning. The storm was not in the sky. One mistake can cause my storm. A storm of self loathing and hopelessness. Wondering why I bother getting out of bed. Good things never last. And they don't come very often. But I felt differently yesterday. My euphoric happiness clouded my judgement. My favourite feeling made me lose focus. And I left the floodgates openNow the storm moves freely within. It'll go, but will come back again"
+]
 
 function handleNewScores(data) {
     if (!data) { return; }
@@ -168,9 +174,25 @@ function beginAnimation() {
     }, 8500);
 }
 
+function setupSampleButtons() {
+    var sampleList = $('.samples')[0]
+
+    var htmlString = ""
+    for (var i in DeepRation.samples) {
+        htmlString += "<a class=\"sample-items\" data-text=\"" + DeepRation.samples[i] + "\"> Sample " + String(Number(i)+1) + "</a>"
+    }
+
+    sampleList.innerHTML = htmlString
+    
+    $('.sample-items').click((e) => {
+        $('textarea')[0].value = e.target.dataset.text;
+    });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     console.log("Document ready.")
     beginAnimation();
+    setupSampleButtons();
     
     progressBar = document.querySelector('progress');
     progressBar.value = 0.0;
